@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AllCareLabs - Frontend
 
-## Getting Started
+AllCareLabs 공식 웹사이트 프론트엔드 입니다.
 
-First, run the development server:
+## 프로젝트 소개
+
+올케어랩스(The Allcare Labs)는 전문 물리치료사 팀입니다. 마라톤, 골프 대회 등 다양한 스포츠 행사에서 테이핑, 물리치료 등의 의무지원을 제공하고 있습니다.
+
+## 기술 스택
+
+- **Framework**: Next.js 16.1.1
+- **Language**: JavaScript (JSX)
+- **Styling**: Tailwind CSS 4
+- **Package Manager**: npm
+
+## 프로젝트 구조
+
+```
+src/
+  app/
+    layout.jsx
+    page.jsx
+    team/page.jsx
+    business/page.jsx
+  components/
+    Navbar.jsx
+    Footer.jsx
+    Section.jsx
+    Card.jsx
+  data/
+    site.js
+```
+
+## 시작하기
+
+### 설치
+
+```bash
+npm install
+```
+
+### 개발 서버 실행
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 확인하세요.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 빌드
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+### 프로덕션 실행
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 배포
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+현재 정적 사이트로 운영 예정입니다.
