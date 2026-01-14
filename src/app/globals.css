@@ -3,5 +3,42 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: var(--font-noto-sans), "Noto Sans KR", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
+
+/* Hero 섹션 애니메이션 */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out both;
+}
+
+.animate-fade-up-delay-200 {
+  animation: fadeUp 0.7s ease-out 0.2s both;
+}
+
+.animate-fade-up-delay-400 {
+  animation: fadeUp 0.7s ease-out 0.4s both;
+}
+
 
