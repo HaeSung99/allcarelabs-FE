@@ -39,6 +39,12 @@ export default function Navbar() {
               홈
             </Link>
             <Link
+              href="/history"
+              className="text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              연혁
+            </Link>
+            <Link
               href="/team"
               className="text-gray-700 hover:text-gray-900 transition-colors"
             >

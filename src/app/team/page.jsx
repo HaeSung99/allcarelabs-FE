@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Section from "@/components/Section";
-import Card from "@/components/Card";
 import Placeholder from "@/components/Placeholder";
 import { site, team } from "@/data/site";
 
@@ -17,7 +17,7 @@ export default function TeamPage() {
               전문 팀 소개
             </h1>
             <p className="max-w-2xl mx-auto text-neutral-600">
-              전문 물리치료사 팀입니다.
+              현장 의무지원의 전문성을 갖춘 올케어랩스 팀을 소개합니다.
             </p>
           </div>
         </div>
@@ -25,39 +25,92 @@ export default function TeamPage() {
 
       {/* Team Members */}
       <Section>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="max-w-5xl mx-auto space-y-16 md:space-y-24">
           {team.map((member, idx) => (
-            <Card
+            <div
               key={idx}
-              className={`animate-fade-up ${
-                idx === 0
-                  ? "[animation-delay:80ms]"
-                  : idx === 1
-                  ? "[animation-delay:160ms]"
-                  : "[animation-delay:240ms]"
-              }`}
+              className={[
+                "rounded-2xl border bg-white overflow-hidden",
+                "transition duration-200 hover:shadow-xl",
+                "animate-fade-up",
+                "flex flex-col md:flex",
+                idx === 0 ? "[animation-delay:80ms]" : "",
+                idx === 1 ? "[animation-delay:160ms]" : "",
+                idx === 2 ? "[animation-delay:240ms]" : "",
+                // 짝수 인덱스는 좌우 반전 레이아웃
+                idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse",
+              ].join(" ")}
             >
-              <div className="mb-4">
-                <Placeholder className="h-48 w-full" />
+              {/* 이미지 섹션 */}
+              <div className="md:w-1/2 aspect-square md:aspect-[4/5] relative bg-neutral-100">
+                {member.image && member.image !== "/images/team/placeholder.jpg" ? (
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <Placeholder className="w-full h-full" />
+                  </div>
+                )}
               </div>
-              <h3 className="text-xl font-semibold text-neutral-900 mb-2">
-                {member.name}
-              </h3>
-              <p className="text-sm text-neutral-600 mb-4">{member.role}</p>
-              <p className="text-neutral-700 mb-4 leading-relaxed">
-                {member.bio}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {member.specialties.map((specialty, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 bg-neutral-100 text-neutral-700 text-xs rounded-full"
-                  >
-                    {specialty}
+
+              {/* 정보 섹션 */}
+              <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                {/* 역할 태그 */}
+                <div className="mb-4">
+                  <span className="inline-block px-4 py-1 bg-neutral-900 text-white text-sm font-medium rounded-full">
+                    {member.role}
                   </span>
-                ))}
+                </div>
+
+                {/* 이름 */}
+                <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                  {member.name}
+                </h2>
+
+                {/* 소개 */}
+                <p className="text-lg text-neutral-700 mb-6 leading-relaxed">
+                  {member.bio}
+                </p>
+
+                {/* 전문 분야 */}
+                <div className="mb-6">
+                  <h3 className="text-sm font-semibold text-neutral-500 uppercase tracking-wide mb-3">
+                    전문 분야
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {member.specialties.map((specialty, i) => (
+                      <span
+                        key={i}
+                        className="px-4 py-2 bg-neutral-100 text-neutral-700 text-sm rounded-lg font-medium"
+                      >
+                        {specialty}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 경력 */}
+                {member.career && member.career.length > 0 && (
+                  <div className="pt-6 border-t">
+                    <h3 className="text-sm font-semibold text-neutral-500 uppercase tracking-wide mb-4">
+                      주요 경력
+                    </h3>
+                    <ul className="space-y-2">
+                      {member.career.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <span className="text-neutral-400 mt-1">•</span>
+                          <span className="text-neutral-700 leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
-            </Card>
+            </div>
           ))}
         </div>
       </Section>
