@@ -105,56 +105,50 @@ export default function BusinessPage() {
         title="협업 안내"
         desc="효율적인 협업을 위해 아래 정보를 포함해 주시면 더 빠르게 진행할 수 있습니다."
       >
-        <div className="grid gap-6 md:grid-cols-2">
-          <Card className="animate-fade-up">
-            <h3 className="text-lg font-semibold text-neutral-900 mb-4">
-              이런 협업이 잘 맞아요
-            </h3>
-            <ul className="space-y-2 text-neutral-700">
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>마라톤/러닝 대회 부스 운영 + 테이핑/컨디셔닝</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>골프대회/협회 행사 케어존 운영</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>
-                  브랜드 협찬(소모품/테이핑/기기)과 현장 노출 운영
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>교육/실습 파견 프로그램(현장 중심)</span>
-              </li>
-            </ul>
-          </Card>
+        <div className="grid gap-4 md:grid-cols-2 md:items-stretch">
+          <div className="rounded-2xl border bg-white p-6 animate-fade-up flex flex-col">
+            <h3 className="text-lg font-semibold mb-6">이런 협업이 잘 맞아요</h3>
+            <div className="grid gap-4 grid-cols-2 flex-1 auto-rows-fr">
+              {business.offerings.map((offering, idx) => (
+                <div
+                  key={idx}
+                  className={[
+                    "rounded-xl border bg-neutral-50 p-4",
+                    "transition duration-200",
+                    "hover:-translate-y-1 hover:shadow-md",
+                    "flex flex-col h-full",
+                  ].join(" ")}
+                >
+                  <h4 className="text-sm font-semibold mb-2">{offering.title}</h4>
+                  <p className="text-xs text-neutral-600 leading-relaxed">
+                    {offering.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
 
-          <Card className="animate-fade-up [animation-delay:120ms]">
-            <h3 className="text-lg font-semibold text-neutral-900 mb-4">
-              제안 시 포함하면 좋은 정보
-            </h3>
-            <ul className="space-y-2 text-neutral-700">
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>행사명/일정/장소/참가 규모</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>지원 범위(부스/응급/테이핑/컨디셔닝)</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>협찬 형태(부스 노출/유니폼/콘텐츠)</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>연락 채널(이메일/전화/담당자)</span>
-              </li>
-            </ul>
-          </Card>
+          <div className="rounded-2xl border bg-neutral-50 p-6 animate-fade-up [animation-delay:120ms] flex flex-col">
+            <h3 className="text-lg font-semibold mb-6">제안 시 포함하면 좋은 정보</h3>
+            <div className="grid gap-4 grid-cols-2 flex-1 auto-rows-fr">
+              {business.proposalInfo.map((info, idx) => (
+                <div
+                  key={idx}
+                  className={[
+                    "rounded-xl border bg-white p-4",
+                    "transition duration-200",
+                    "hover:-translate-y-1 hover:shadow-md",
+                    "flex flex-col h-full",
+                  ].join(" ")}
+                >
+                  <h4 className="text-sm font-semibold mb-2">{info.title}</h4>
+                  <p className="text-xs text-neutral-600 leading-relaxed">
+                    {info.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </Section>
 
