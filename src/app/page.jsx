@@ -5,7 +5,7 @@ import Card from "@/components/Card";
 import Placeholder from "@/components/Placeholder";
 import ImageSlider from "@/components/ImageSlider";
 import LogoSlider from "@/components/LogoSlider";
-import { site, highlights, business, heroImages, heroText, partnerLogos } from "@/data/site";
+import { site, highlights, business, heroImages, heroText, partnerLogos, stats, process, testimonials, faq } from "@/data/site";
 
 export default function HomePage() {
   return (
@@ -126,6 +126,113 @@ export default function HomePage() {
       {/* 브랜드 로고 슬라이더 */}
       <LogoSlider logos={partnerLogos} />
 
+      {/* 통계/실적 섹션 */}
+      <Section
+        eyebrow="Our Impact"
+        title="검증된 실적과 신뢰"
+        desc="다년간의 현장 경험으로 쌓아온 실적과 고객 만족도를 확인하세요."
+        className="bg-neutral-50"
+      >
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {stats.map((stat, idx) => (
+            <div
+              key={idx}
+              className={[
+                "rounded-xl border bg-white p-6 text-center",
+                "transition duration-200",
+                "hover:-translate-y-1 hover:shadow-md",
+                "animate-fade-up",
+                idx === 0 ? "[animation-delay:80ms]" : "",
+                idx === 1 ? "[animation-delay:160ms]" : "",
+                idx === 2 ? "[animation-delay:240ms]" : "",
+                idx === 3 ? "[animation-delay:320ms]" : "",
+              ].join(" ")}
+            >
+              <div className="text-4xl md:text-5xl font-bold text-neutral-900 mb-2">
+                {stat.value}
+              </div>
+              <div className="text-lg font-semibold text-neutral-700 mb-1">
+                {stat.label}
+              </div>
+              <div className="text-sm text-neutral-500">{stat.desc}</div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* 프로세스/워크플로우 섹션 */}
+      <Section
+        eyebrow="How we work"
+        title="체계적인 운영 프로세스"
+        desc="대회 전부터 사후까지 단계별로 체계화된 프로세스로 안정적인 지원을 제공합니다."
+      >
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {process.map((item, idx) => (
+            <div
+              key={idx}
+              className={[
+                "rounded-xl border bg-white p-6",
+                "transition duration-200",
+                "hover:-translate-y-1 hover:shadow-md",
+                "animate-fade-up",
+                idx === 0 ? "[animation-delay:80ms]" : "",
+                idx === 1 ? "[animation-delay:160ms]" : "",
+                idx === 2 ? "[animation-delay:240ms]" : "",
+                idx === 3 ? "[animation-delay:320ms]" : "",
+              ].join(" ")}
+            >
+              <div className="text-3xl font-bold text-neutral-400 mb-3">
+                {item.step}
+              </div>
+              <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
+              <p className="text-sm text-neutral-600 leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* 고객 후기/추천사 섹션 */}
+      <Section
+        eyebrow="Testimonials"
+        title="고객 후기"
+        desc="실제로 서비스를 경험한 고객들의 생생한 후기를 확인하세요."
+        className="bg-neutral-50"
+      >
+        <div className="grid gap-6 md:grid-cols-3">
+          {testimonials.map((testimonial, idx) => (
+            <div
+              key={idx}
+              className={[
+                "rounded-xl border bg-white p-6",
+                "transition duration-200",
+                "hover:-translate-y-1 hover:shadow-md",
+                "animate-fade-up",
+                idx === 0 ? "[animation-delay:80ms]" : "",
+                idx === 1 ? "[animation-delay:160ms]" : "",
+                idx === 2 ? "[animation-delay:240ms]" : "",
+              ].join(" ")}
+            >
+              <div className="flex mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <span key={i} className="text-yellow-400 text-lg">★</span>
+                ))}
+              </div>
+              <p className="text-neutral-700 mb-4 leading-relaxed">
+                "{testimonial.content}"
+              </p>
+              <div className="border-t pt-4">
+                <div className="font-semibold text-neutral-900">
+                  {testimonial.name}
+                </div>
+                <div className="text-sm text-neutral-500">{testimonial.role}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
       {/* 협업 CTA */}
       <Section
         eyebrow="Partner"
@@ -185,7 +292,80 @@ export default function HomePage() {
           >
             비즈니스 상세 보기
           </Link>
-          
+        </div>
+      </Section>
+
+      {/* FAQ 섹션 */}
+      <Section
+        eyebrow="FAQ"
+        title="자주 묻는 질문"
+        desc="궁금한 점이 있으신가요? 자주 묻는 질문을 확인해보세요."
+      >
+        <div className="max-w-3xl mx-auto">
+          <div className="space-y-4">
+            {faq.map((item, idx) => (
+              <details
+                key={idx}
+                className={[
+                  "group rounded-xl border bg-white p-6",
+                  "transition duration-200",
+                  "hover:shadow-md",
+                  "animate-fade-up",
+                  idx === 0 ? "[animation-delay:80ms]" : "",
+                  idx === 1 ? "[animation-delay:120ms]" : "",
+                  idx === 2 ? "[animation-delay:160ms]" : "",
+                  idx === 3 ? "[animation-delay:200ms]" : "",
+                  idx === 4 ? "[animation-delay:240ms]" : "",
+                ].join(" ")}
+              >
+                <summary className="font-semibold text-neutral-900 cursor-pointer list-none flex items-center justify-between">
+                  <span>{item.question}</span>
+                  <span className="text-neutral-400 group-open:rotate-180 transition-transform">
+                    ▼
+                  </span>
+                </summary>
+                <div className="mt-4 pt-4 border-t text-neutral-600 leading-relaxed">
+                  {item.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* 최종 CTA 섹션 */}
+      <Section
+        eyebrow="Contact"
+        title="협업 문의하기"
+        desc="대회나 행사 의무지원이 필요하신가요? 언제든지 문의해주세요."
+        className="bg-neutral-900 text-white"
+      >
+        <div className="text-center">
+          <p className="text-lg text-neutral-300 mb-8 max-w-2xl mx-auto">
+            올케어랩스는 스포츠 현장에서 필요한 모든 의무지원 서비스를 제공합니다.
+            <br />
+            대회 규모와 성격에 맞는 맞춤형 솔루션을 제안해드립니다.
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <a
+              href={`mailto:${site.email}`}
+              className="rounded-md bg-white text-neutral-900 px-6 py-3 hover:opacity-90 transition font-medium"
+            >
+              이메일 문의
+            </a>
+            <a
+              href={`tel:${site.phone}`}
+              className="rounded-md border-2 border-white text-white px-6 py-3 hover:bg-white hover:text-neutral-900 transition font-medium"
+            >
+              전화 문의
+            </a>
+            <Link
+              href="/business"
+              className="rounded-md border-2 border-white text-white px-6 py-3 hover:bg-white hover:text-neutral-900 transition font-medium"
+            >
+              비즈니스 상세 보기
+            </Link>
+          </div>
         </div>
       </Section>
     </main>

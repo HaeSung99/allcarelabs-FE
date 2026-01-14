@@ -14,7 +14,7 @@ export default function LogoSlider({ logos = { row1: [], row2: [], row3: [] } })
 
   return (
     <section className="py-16 bg-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[95%] md:max-w-[90%] lg:max-w-[85%] px-2 md:px-4 w-full">
         <div className="space-y-8">
           {rows.map((row, rowIdx) => {
             // 줄이 비어있으면 렌더링하지 않음
