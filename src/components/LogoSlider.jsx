@@ -41,7 +41,7 @@ export default function LogoSlider({ logos = { row1: [], row2: [], row3: [] } })
                   {duplicatedRow.map((logo, idx) => (
                     <motion.div
                       key={`${rowIdx}-${idx}`}
-                      className="flex-shrink-0 w-32 h-16 relative grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
+                      className="flex-shrink-0 w-[166px] h-[83px] relative grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
                       whileHover={{ scale: 1.05 }}
                     >
                       {logo.type === "image" ? (

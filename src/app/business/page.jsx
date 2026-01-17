@@ -13,17 +13,17 @@ export default function BusinessPage() {
             <p className="text-xs font-medium uppercase tracking-widest text-neutral-500 mb-2">
               Business Partnership
             </p>
-            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
+            <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
               비즈니스 제안
             </h1>
-            <p className="max-w-2xl mx-auto text-neutral-600 mb-8">
+            <p className="max-w-2xl mx-auto text-neutral-600 mb-8 text-sm md:text-base">
               대회/협회/브랜드와의 협업을 통해 스포츠 현장의 전문 의무지원과
               컨디셔닝을 제공합니다.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <a
                 href={`tel:${site.phone}`}
-                className="px-8 py-3 bg-neutral-900 text-white rounded-lg hover:opacity-90 transition font-medium"
+                className="px-6 py-2.5 md:px-8 md:py-3 bg-neutral-900 text-white rounded-lg hover:opacity-90 transition font-medium text-sm md:text-base"
               >
                 협업 문의하기
               </a>
@@ -31,7 +31,7 @@ export default function BusinessPage() {
                 href={site.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="px-8 py-3 border-2 border-neutral-900 text-neutral-900 rounded-lg hover:bg-neutral-900 hover:text-white transition font-medium"
+                className="px-6 py-2.5 md:px-8 md:py-3 border-2 border-neutral-900 text-neutral-900 rounded-lg hover:bg-neutral-900 hover:text-white transition font-medium text-sm md:text-base"
               >
                 인스타그램 보기
               </a>
@@ -74,7 +74,7 @@ export default function BusinessPage() {
       {/* Proof Points */}
       <Section className="bg-neutral-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-semibold text-center text-neutral-900 mb-12">
+          <h2 className="text-2xl md:text-4xl font-semibold text-center text-neutral-900 mb-8 md:mb-12">
             지원 현황
           </h2>
           <div className="grid gap-6 md:grid-cols-3">
@@ -161,16 +161,16 @@ export default function BusinessPage() {
           <p className="text-xl text-neutral-300 mb-8">
             전문 팀과 함께 성공적인 스포츠 행사를 만들어가세요.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
             <a
               href={`tel:${site.phone}`}
-              className="px-8 py-3 bg-white text-neutral-900 rounded-lg hover:bg-neutral-100 transition-colors font-medium"
+              className="px-6 py-2.5 md:px-8 md:py-3 bg-white text-neutral-900 rounded-lg hover:bg-neutral-100 transition-colors font-medium text-sm md:text-base"
             >
               전화 문의
             </a>
             <a
               href={`mailto:${site.email}`}
-              className="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-neutral-900 transition-colors font-medium"
+              className="px-6 py-2.5 md:px-8 md:py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-neutral-900 transition-colors font-medium text-sm md:text-base"
             >
               이메일 문의
             </a>
@@ -178,7 +178,7 @@ export default function BusinessPage() {
               href={site.instagram}
               target="_blank"
               rel="noreferrer"
-              className="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-neutral-900 transition-colors font-medium"
+              className="px-6 py-2.5 md:px-8 md:py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-neutral-900 transition-colors font-medium text-sm md:text-base"
             >
               인스타그램
             </a>

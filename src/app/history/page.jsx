@@ -25,10 +25,10 @@ export default function HistoryPage() {
             <p className="text-xs font-medium uppercase tracking-widest text-neutral-500 mb-2">
               Our History
             </p>
-            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
+            <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
               연혁
             </h1>
-            <p className="max-w-2xl mx-auto text-neutral-600">
+            <p className="max-w-2xl mx-auto text-neutral-600 text-sm md:text-base">
               올케어랩스가 진행해온 의무지원 활동과 주요 이벤트를 확인하세요.
             </p>
           </div>
@@ -42,7 +42,7 @@ export default function HistoryPage() {
             <div key={year} className="mb-20">
               {/* Year Header */}
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-neutral-900">
+                <h2 className="text-2xl md:text-4xl font-bold text-neutral-900">
                   {year}년
                 </h2>
               </div>
@@ -189,16 +189,16 @@ export default function HistoryPage() {
           <p className="text-xl text-neutral-300 mb-8">
             다음 대회에서 올케어랩스와 함께하세요.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
             <a
               href={`mailto:contact@allcarelabs.kr`}
-              className="px-8 py-3 bg-white text-neutral-900 rounded-lg hover:bg-neutral-100 transition-colors font-medium"
+              className="px-6 py-2.5 md:px-8 md:py-3 bg-white text-neutral-900 rounded-lg hover:bg-neutral-100 transition-colors font-medium text-sm md:text-base"
             >
               이메일 문의
             </a>
             <a
               href={`tel:010-0000-0000`}
-              className="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-neutral-900 transition-colors font-medium"
+              className="px-6 py-2.5 md:px-8 md:py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-neutral-900 transition-colors font-medium text-sm md:text-base"
             >
               전화 문의
             </a>

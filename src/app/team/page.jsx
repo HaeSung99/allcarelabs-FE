@@ -13,10 +13,10 @@ export default function TeamPage() {
             <p className="text-xs font-medium uppercase tracking-widest text-neutral-500 mb-2">
               Our Team
             </p>
-            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
+            <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
               전문 팀 소개
             </h1>
-            <p className="max-w-2xl mx-auto text-neutral-600">
+            <p className="max-w-2xl mx-auto text-neutral-600 text-sm md:text-base">
               현장 의무지원의 전문성을 갖춘 올케어랩스 팀을 소개합니다.
             </p>
           </div>
@@ -58,7 +58,7 @@ export default function TeamPage() {
               </div>
 
               {/* 정보 섹션 */}
-              <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+              <div className="md:w-1/2 p-6 md:p-12 flex flex-col justify-center">
                 {/* 역할 태그 */}
                 <div className="mb-4">
                   <span className="inline-block px-4 py-1 bg-neutral-900 text-white text-sm font-medium rounded-full">
@@ -67,12 +67,12 @@ export default function TeamPage() {
                 </div>
 
                 {/* 이름 */}
-                <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                <h2 className="text-2xl md:text-4xl font-bold text-neutral-900 mb-4">
                   {member.name}
                 </h2>
 
                 {/* 소개 */}
-                <p className="text-lg text-neutral-700 mb-6 leading-relaxed">
+                <p className="text-base md:text-lg text-neutral-700 mb-6 leading-relaxed">
                   {member.bio}
                 </p>
 
@@ -124,16 +124,16 @@ export default function TeamPage() {
           <p className="text-xl text-neutral-300 mb-8">
             전문 팀과 함께 스포츠 현장의 의무지원을 제공합니다.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
             <a
               href={`tel:${site.phone}`}
-              className="px-8 py-3 bg-white text-neutral-900 rounded-lg hover:bg-neutral-100 transition-colors font-medium"
+              className="px-6 py-2.5 md:px-8 md:py-3 bg-white text-neutral-900 rounded-lg hover:bg-neutral-100 transition-colors font-medium text-sm md:text-base"
             >
               전화 문의
             </a>
             <a
               href={`mailto:${site.email}`}
-              className="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-neutral-900 transition-colors font-medium"
+              className="px-6 py-2.5 md:px-8 md:py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-neutral-900 transition-colors font-medium text-sm md:text-base"
             >
               이메일 문의
             </a>
